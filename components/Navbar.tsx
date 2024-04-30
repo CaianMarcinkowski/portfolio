@@ -9,7 +9,6 @@ const TOP_OFFSET = 66;
 const Navbar = ({ onChangeHandlers }: {onChangeHandlers:any}) => {
   const [showBackground, setShowBackground] = useState(false);
   const [changeFlag, setChangeFlag] = useState(false);
-  const [language, setLanguage] = useState(false);
   const [theme, setTheme] = useState("dark");
   const [icon, setIcon] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
@@ -19,13 +18,13 @@ const Navbar = ({ onChangeHandlers }: {onChangeHandlers:any}) => {
     const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);
     setIcon(!icon);
-    handleThemeChange(newTheme); // Corrigido aqui para usar handleThemeChange
+    handleThemeChange(newTheme);
   };
 
   const internalHandleLanguageChange = () => {
     const changeLanguage = changeFlag ? true : false
     setChangeFlag(!changeFlag);
-    handleLanguageChange(changeLanguage); // Corrigido aqui para usar handleLanguageChange
+    handleLanguageChange(changeLanguage);
   };
 
   const toogleMobileMenu = useCallback(() => {
@@ -60,7 +59,7 @@ const Navbar = ({ onChangeHandlers }: {onChangeHandlers:any}) => {
                     items-center
                     transition
                     duration-600
-                    ${showBackground ? "bg-zinc-900 bg-opacity-90" : ""}
+                    ${showBackground ? theme === 'light' ? "bg-zinc-100" : "bg-zinc-800" : ""}
                 `}
       >
         <img className="h-5 lg:h-7" src="/images/LOGO.png" alt="Logo" />

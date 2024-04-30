@@ -1,24 +1,21 @@
-import { useState, useEffect, useCallback } from "react";
-
 interface AboutmeProps {
   theme: string;
   language: boolean;
 }
-
 
 const Aboutme:React.FC <AboutmeProps> = ({
   theme,
   language
 }) => {
   return (
-    <div className="relative h-[45.25vw]">
-      <div className="flex items-center justify-left h-full">
+    <div className="relative h-[25.25vw]">
+      <div className="flex items-center justify-left h-full mt-20">
         <img
-          className={`${theme === 'light' ? 'border-gray-800' : 'border-gray-200'} rounded-full border-4 bg-red-200 ml-10 mr-5 h-60`}
+          className={`${theme === 'light' ? 'border-gray-800' : 'border-gray-200'} rounded-full border-4 ml-10 mr-5 h-60`}
           src="/images/perfil.png"
           alt="Perfil"
         />
-        <div className="mb-8">
+        <div className="mb-5">
 
           <h2 
             className={`${theme === 'light' ? 'text-black' : 'text-white' } text-xl font-bold mb-2`}
@@ -33,7 +30,7 @@ const Aboutme:React.FC <AboutmeProps> = ({
           </p>
 
           <p 
-            className={`${theme === 'light' ? 'text-black' : 'text-white' } mt-1 w-90 h-20 mr-10`}
+            className={`${theme === 'light' ? 'text-black' : 'text-white' } mt-1 w-90 h-20 mr-40`}
           >
             {`${language ? `
             Hello! I am a technology enthusiast passionate about solving problems and creating innovative solutions. With a solid background in software development, I am always looking to learn and improve myself in the latest technologies and programming practices.
